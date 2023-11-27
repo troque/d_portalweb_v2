@@ -1,0 +1,60 @@
+{
+    "name": "yajra/laravel-oci8",
+    "description": "Oracle DB driver for Laravel 4|5|6|7 via OCI8",
+    "keywords" : ["laravel","oracle","oci8","pdo_oci"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Arjay Angeles",
+            "email": "aqangeles@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.0.2",
+        "ext-oci8": ">=3.0.1",
+        "ext-pdo": "*",
+        "illuminate/database": "^9",
+        "illuminate/pagination": "^9",
+        "illuminate/support": "^9",
+        "illuminate/validation": "^9",
+        "yajra/laravel-pdo-via-oci8": "^3.0"
+    },
+    "require-dev": {
+        "doctrine/dbal": "^3.3",
+        "mockery/mockery": "^1.4.4",
+        "orchestra/testbench": "^7.0",
+        "phpunit/phpunit": "^9.5.8"
+    },
+    "autoload": {
+        "files": [
+          "src/helper.php"
+        ],
+        "psr-4": {
+            "Yajra\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Yajra\\Oci8\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+          "dev-master": "9.x-dev"
+        },
+        "laravel": {
+            "providers": [
+                "Yajra\\Oci8\\Oci8ServiceProvider",
+                "Yajra\\Oci8\\Oci8ValidationServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "docker": "docker run -d -p 49160:22 -p 1521:1521 deepdiver/docker-oracle-xe-11g"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
